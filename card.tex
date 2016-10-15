@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% BUSINESS CARD template
+% Based on BUSINESS CARD template
+%  by Karol Kozioł (www.karol-koziol.net)
+%  on May 2013
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt]{scrartcl}
+\usepackage{businesscard}
+\pagestyle{empty}
+
+%%% BUSINESS CARD SIZE
+\newlength{\cardw}
+\newlength{\cardh}
+%% ISO 7810 size: 85.60mm × 53.98mm
+\setlength{\cardw}{85.60mm}
+\setlength{\cardh}{53.98mm}
+%% European size: 85mm × 55mm
+%\setlength{\cardw}{85mm}
+%\setlength{\cardh}{55mm}
+%% US size: 3.5 in × 2 in
+%\setlength{\cardw}{3.5in}
+%\setlength{\cardh}{2in}
+
+
+\newcommand{\Name}{{\huge \textbf{Mateusz Kubuszok}}}
+\newcommand{\Description}{{\large ComboSolutions}}
+\newcommand{\Email}{mateusz\Highlight{.}kubuszok\Highlight{@}gmail\Highlight{.}com}
+\newcommand{\Homepage}{\href{http://kubuszok.pl/}{kubuszok.pl} / \href{http://combosolutions.pl/}{combosolutions.pl}}
+\newcommand{\Phone}{\Highlight{+48} 784 929 440}
+
+\begin{document}
+\MakeCard{\Name}{\Description}{\Email}{\Homepage}{\Phone}
+\end{document}

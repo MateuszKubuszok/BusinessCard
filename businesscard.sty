@@ -1,0 +1,32 @@
+\ProvidesPackage{businesscard}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks, breaklinks, urlcolor=Maroon, linkcolor=Maroon}
+
+\usepackage{tikz}
+
+\usepackage{geometry}
+\geometry{total={210mm,297mm},hmargin=10mm,vmargin=2mm}
+
+\newcommand{\Highlight}[1]{{\color{Maroon}#1}}
+
+\newcommand{\MakeCard}[5]{
+\begin{tikzpicture}
+% grid
+\foreach \i in {0,1,2,3,4,5} \draw[very thin, gray,dashed] (0,\i*\cardh) -- (2*\cardw,\i*\cardh);
+\foreach \j in {0,1,2} \draw[very thin, gray,dashed] (\j*\cardw,0) -- (\j*\cardw,5*\cardh);
+% card content
+\foreach \i in {0,1} \foreach \j in {0,1,2,3,4} {
+% center text
+   \node[black!25!Maroon] at (\i*\cardw+0.5\cardw,\j*\cardh+0.75\cardh) {#1};
+   \node at (\i*\cardw+0.5\cardw,\j*\cardh+0.60\cardh) {#2};
+   \node at (\i*\cardw+0.5\cardw,\j*\cardh+0.40\cardh) {#3};
+   \node at (\i*\cardw+0.5\cardw,\j*\cardh+0.3\cardh) {#4};
+   \node at (\i*\cardw+0.5\cardw,\j*\cardh+0.2\cardh) {#5};
+};
+\end{tikzpicture}
+}
